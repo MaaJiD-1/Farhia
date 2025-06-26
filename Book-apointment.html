@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 100px 10px 0 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+        }
+        
+
+
+         .hero {
+      background:  rgb(83, 83, 229);
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      background-color: #28a745;
+      padding: 12px 30px;
+      color: white;
+      border: none;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      
+    }
+
+    .button:hover {
+      background-color: #218838;
+    }
+
+
+    .form-section {
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #004c99;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #f9f9f9;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+   
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .date{
+      max-width: 45%;
+    }
+    span{
+      display: block;
+      height: 23px;
+      margin: 4px;
+      color: red;
+    }
+    #department-suggestions{
+      margin-top: 4px;
+      max-height: 100px;
+      max-width: 90%;
+    }
+
+   #submit{
+    max-width: 100%;
+   }
+
+ 
+        .contact-section{
+            background-color: #10002b;
+            padding: 10px 0 10px;
+            margin-top: 40px;
+        }
+
+         .one{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 40px;
+            
+            
+        }
+        @media (max-width:620px) {
+            .one{
+            display: grid;
+            grid-template-columns:  1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        }
+        .first{
+            text-align: center;
+            color: white;
+        }
+        .left{
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            padding-left: 30px;
+        }
+        input{
+            max-width: 90%;
+            height: 43px;
+            border-radius: 7px;
+            padding: 0 10px;
+            margin-bottom: 10px;
+            border: 1px solid gray;
+            
+        }
+        textarea{
+            height: 90px; 
+            padding: 6px;
+            border-radius: 7px;
+        }
+        .right{
+            padding: 20px;
+            color: white;
+        }
+        .contacts{
+            display: flex;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .contacts p{
+            margin-left: 20px;
+
+        }
+        .contacts:hover{
+            color: red;
+            cursor: pointer;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+         .logo{
+            height: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+          <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img class="logo" src="City_logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">City Hospital</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link "  href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Book-apointment.html">Book-apointment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register.html">Register</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link " href="about.html">About</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link " href="Contact.html">Contact</a>
+          </li>
+         
+        </ul>
+       
+      </div>
+    </div>
+  </div>
+</nav>
+    </header>
+   <section class="hero">
+    <div class="container">
+      <h2>Your Health, Our Priority</h2>
+      <p>Schedule your visit with our experienced doctors in just a few clicks.</p>
+      <a href="#appointment" class="button">Book Now</a>
+    </div>
+  </section>
+
+  <section id="appointment" class="form-section">
+    <div class="container">
+      <h2>Book an Appointment</h2>
+      <form id="form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" >
+          
+          <span id="name-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" >
+          <span id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone"  >
+          <span id="phone-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input type="text"  id="department">
+          <div id="department-suggestions" ></div>
+          <span id="department-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date </label>
+          <input  type="date" id="date" >
+          <span id="date-error"></span>
+          <label for="date">Date </label>
+          <input type="time" id="time" >
+          <span id="time-error"></span>
+        </div>
+
+        <button type="submit"  class="button" style="width:90%">Submit</button>
+        <p id="success-message"></p>
+      </form>
+    </div>
+  </section>
+ <div id="Contact" class="contact-section">
+
+            <h1 class="first">Contact Us</h1>
+            <section class="one" >
+          <div class="left">
+              <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="Your Email">
+            <input type="tel" placeholder="Your Contact Number">
+            <textarea placeholder="Message..." ></textarea>
+          </div>
+          <div class="right">
+            <div class="contacts">
+                 <i class="fas fa-phone"></i> 
+                 <p>061-6510367</p>
+            </div>
+            <div class="contacts">
+                <i class="fas fa-envelope"></i>
+                <p>info@cityhospital.com</p>
+            </div>
+            <div class="contacts">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Somaila, Benadir, Howlwadaag</p>
+            </div>
+            
+        </div>
+    </section>
+</div>
+  
+   <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+       const departmentSuggestionBox = document.getElementById("department-suggestions");
+const departmentList = ["Pediatrics", "Cardiology", "Neurology"];
+
+department.addEventListener("input", function () {
+  const typed = department.value.trim().toLowerCase();
+  departmentSuggestionBox.innerHTML = ""; 
+
+  if (typed === "") {
+    departmentSuggestionBox.style.display = "none";
+    return;
+  }
+
+  const matches = departmentList.filter(d => d.toLowerCase().startsWith(typed));
+
+  if (matches.length > 0) {
+    matches.forEach(match => {
+      const item = document.createElement("div");
+      item.textContent = match;
+      item.style.padding = "6px 10px";
+      item.style.cursor = "pointer";
+
+      departmentSuggestionBox.appendChild(item);
+
+      item.addEventListener("click", () => {
+        department.value = match;
+        departmentSuggestionBox.innerHTML = "";
+        departmentSuggestionBox.style.display = "none";
+      });
+
+      
+    });
+    departmentSuggestionBox.style.display = "block";
+  }
+});
+
+  $("#form").on("submit",(x)=>{
+    $("#name-error").html("");
+    $("#email-error").html("");
+    $("#phone-error").html("");
+    $("#department-error").html("");
+    $("#date-error").html("");
+    $("#time-error").html("");
+    
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     const selectedDate = new Date($("#date").val());
+      const today = new Date();
+
+      today.setHours(0, 0, 0, 0);
+      const userTime = $("#time").value ;
+
+    //Name
+    if($("#name").val().trim()===""){
+      $("#name-error").html("required");
+      x.preventDefault();
+    }
+
+    //Email
+    else if($("#email").val().trim()===""){
+      $("#email-error").html("required");
+      x.preventDefault();
+    }
+    else if(!emailPattern.test($("#email").val())){
+      $("#email-error").html("Enter valid email");
+      x.preventDefault();
+    }
+    
+    //Phone
+    else if($("#phone").val().trim()===""){
+      $("#phone-error").html("required");
+      x.preventDefault();
+    }
+    else if(isNaN($("#phone").val())){
+      $("#phone-error").html("Only Number");
+      x.preventDefault();
+    }
+     else if($("#phone").val().length !== 10 && $("#phone").val().length  !== 9){
+      $("#phone-error").html("Wrong Number ");
+      x.preventDefault();
+    }
+
+    //Department
+    else if($("#department").val().trim()===""){
+      $("#department-error").html("required");
+      x.preventDefault();
+    }
+
+    //Date
+    else if($("#date").val().trim()===""){
+      $("#date-error").html("required");
+      x.preventDefault();
+    }
+    else if(selectedDate < today){
+      $("#date-error").html("Please choose a date that is today or later");
+      x.preventDefault();
+    }
+
+    //Time
+     else if($("#time").val().trim()===""){
+      $("#time-error").html("required");
+      x.preventDefault();
+    }
+     else if($("#time").val() < "10:30" || $("#date").val() > "16:00" ){
+      $("#time-error").html("Please choose a time between 10:30 AM and 4:00 PM");
+      x.preventDefault();
+    }
+    
+
+  });
+       
+    </script>
+</body>
+</html>
