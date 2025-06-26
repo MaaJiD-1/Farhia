@@ -371,7 +371,7 @@ department.addEventListener("input", function () {
       const today = new Date();
 
       today.setHours(0, 0, 0, 0);
-      const userTime = $("#time").value ;
+      const userTime = $("#time").val() ;
 
     //Name
     if($("#name").val().trim()===""){
@@ -424,7 +424,7 @@ department.addEventListener("input", function () {
       $("#time-error").html("required");
       x.preventDefault();
     }
-     else if($("#time").val() < "10:30" || $("#date").val() > "16:00" ){
+     else if($("#time").val() < "10:30" || $("#time").val() > "16:00" ){
       $("#time-error").html("Please choose a time between 10:30 AM and 4:00 PM");
       x.preventDefault();
     }
